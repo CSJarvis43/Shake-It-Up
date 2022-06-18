@@ -1,11 +1,14 @@
 const baseUrl = 'https://www.thecocktaildb.com/api/json/v1/1'
 const drinkCollection = document.getElementById('drink_collection')
 
-function init(){
-    fetch(baseUrl + '/filter.php?i=Vodka')
+function fetchCocktails(ingredient = 'vodka'){
+    fetch(baseUrl + `/filter.php?i=${ingredient}`)
     .then(res => res.json())
-    .then(drinkData => drinkData.drinks.forEach(renderCocktails))
+    .then((drinkData) => {
+        drinkData.drinks.slice(0,10).forEach(renderCocktails)
+    })
 }
+
 
 function initialFocus(){
     fetch(baseUrl + '/random.php')
@@ -18,7 +21,7 @@ function initialFocus(){
 
 function renderCocktails(drinks){
     const card = document.createElement('div')
-    card.id = 'drink_card'
+    card.className = 'drink_card'
 
     const name = document.createElement('h2')
     name.textContent = drinks.strDrink
@@ -46,5 +49,5 @@ function renderMain(drink){
 
 }
 
-init()
+fetchCocktails()
 initialFocus()
