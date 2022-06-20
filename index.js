@@ -60,10 +60,10 @@ function renderCocktails(drinks){
 
 function renderIngredientItem(measurement, ingredient){
     if (
-        measurement == null
-        || ingredient == null
-        || ingredient == " "
-        || measurement == " "
+        ingredient == null
+        || measurement == null
+        || ingredient == ""
+        || measurement == ""
     ) {
         return undefined
     }
