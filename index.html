@@ -36,15 +36,17 @@
     </div>
     <div class = "grid" id="drink_collection">
     </div>
-    <form class="grocery_list">
-      <div class="grocery">
-        <label for="ingredient1">Add an ingredient to your grocery list!</label>
-        <input type ="text" name="ingredient1" id="ingredient1" placeholder = "Ingredient" required>
-        <button type="submit">Add to list!</button>
-      </div>
-      <div class="grocery">
-        <ul id="list">Grocery List</ul>
-      </div>
-    </form>
+    <div class="list_container">
+      <form class="grocery_list">
+        <div class="list_child">
+          <label for="ingredient1">Add an ingredient to your grocery list!</label>
+          <input type ="text" name="ingredient1" id="ingredient1" placeholder = "Ingredient" required>
+          <button type="submit">Add to list!</button>
+        </div>
+        <div class="list_child">
+          <ul id="list">Grocery List</ul>
+        </div>
+      </form>
+    </div>
   </body>
 </html>
