@@ -56,6 +56,21 @@ function selectedDrink(){
     })
 }
 
+function groceryLister(){
+    const list = document.getElementById('list')
+    const addItem = document.querySelector('.grocery_list')
+    addItem.addEventListener('submit', e => {
+        e.preventDefault()
+        const ingredient = e.target['ingredient1'].value
+        
+        const li = document.createElement('li')
+        li.textContent = ingredient
+        list.append(li)
+    })
+
+}
+
 fetchCocktails()
 initialFocus()
 selectedDrink()
+groceryLister()

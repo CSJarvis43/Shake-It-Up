@@ -1,6 +1,4 @@
-
-
-h1{
+div#header {
     margin: auto;
     width: 50%;
     text-align: center;
@@ -39,3 +37,24 @@ h1{
     margin: auto;
 }
 
+.list_container {
+    padding-top: 2.5cm;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.list_child {
+    flex: 1;
+    border: 1px double black;
+    font-size: 28px;
+}
+
+#list {
+    text-align: center;
+    font-size: 20px;
+}
+
+input[type=text] {
+    font-size: 28px;
+}
