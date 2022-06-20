@@ -23,14 +23,15 @@ function renderCocktails(drinks){
     const card = document.createElement('div')
     card.className = 'drink_card'
 
-    const name = document.createElement('h2')
+    const name = document.createElement('h3')
     name.textContent = drinks.strDrink
     // console.log(name)
 
     const image = document.createElement('img')
     image.src = drinks.strDrinkThumb
     image.details = drinks
-    // console.log(image.details)
+    image.className = 'drink_card_img'
+    //console.log(image.details)
 
     card.append(name, image)
     drinkCollection.append(card)
