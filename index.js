@@ -1,7 +1,8 @@
 const baseUrl = 'https://www.thecocktaildb.com/api/json/v1/1'
 const drinkCollection = document.getElementById('drink_collection')
+const ingredientList = document.getElementById('ingredients')
 
-function fetchCocktails(ingredient = 'vodka'){
+function fetchCocktails(ingredient = 'tequila'){
     fetch(baseUrl + `/filter.php?i=${ingredient}`)
     .then(res => res.json())
     .then((drinkData) => {
@@ -28,12 +29,48 @@ function renderCocktails(drinks){
 
     const image = document.createElement('img')
     image.src = drinks.strDrinkThumb
-    image.details = drinks
     image.className = 'drink_card_img'
 
     card.append(name, image)
     drinkCollection.append(card)
 
+    card.addEventListener('click',() => {
+        const mainName = document.getElementById('focus_name')
+        mainName.textContent = drinks.strDrink
+
+        const mainImage= document.getElementById('drink_focus')
+        mainImage.src = drinks.strDrinkThumb
+
+        const drinkId = parseInt(drinks.idDrink)
+        
+        fetch(baseUrl + `/lookup.php?i=${drinkId}`)
+        .then(response => response.json())
+        .then(drinkData => {
+            const drink = drinkData.drinks
+            const mainDrinkInstructions = document.getElementById('instructions')
+            mainDrinkInstructions.innerText = drink[0].strInstructions
+            ingredientList.innerHTML= ''
+
+            for(let i=1; i<=15; i++){
+                renderIngredientItem(drink[0][`strMeasure${i}`] , drink[0][`strIngredient${i}`])
+            }
+        })
+    })
+}
+
+function renderIngredientItem(measurement, ingredient){
+    if (
+        ingredient == null
+        || measurement == null
+        || ingredient == ""
+        || measurement == ""
+    ) {
+        return undefined
+    }
+    const ingredientItem = document.createElement('li')
+    ingredientItem.textContent = `${measurement} ${ingredient}`
+
+    ingredientList.append(ingredientItem)
 }
 
 function renderMain(drink){
@@ -46,7 +83,13 @@ function renderMain(drink){
     const drinkInstructions = document.getElementById('instructions')
     drinkInstructions.innerText = drink[0].strInstructions
 
+    ingredientList.innerHTML= ''
+
+        for(let i=1; i<=15; i++){
+            renderIngredientItem(drink[0][`strMeasure${i}`] , drink[0][`strIngredient${i}`])
+            }
 }
+
 
 function selectedDrink(){
     const formValue = document.getElementById('sort_form')
@@ -74,3 +117,4 @@ fetchCocktails()
 initialFocus()
 selectedDrink()
 groceryLister()
+
