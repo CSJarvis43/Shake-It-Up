@@ -11,7 +11,19 @@ o	    Randomizer spits out a random cocktail, along with ingredients and instruc
 •	User wants to remember to buy an ingredient at the store
 o	    Can add an ingredient to the grocery list
 o	    List possibly can persist on a server (stretch goal)
+
 User Stories
 •	As a user, I can see a cocktail image accompanied by its ingredients and instructions when arriving to the page.
 •	As a user, I am able to select from a dropdown which alcohol type I would like in my cocktail and see a list of example cocktails.
 •	As a user, when I click on one of the cocktails in the list, I see that cocktail and all its instruction and ingredient details displayed in the main section of the page.
+
+Core features
+•	Search for cocktail by ingredient entered
+•	Click on random button to return a list of random cocktail recipes
+•	Grocery list for ingredients
+
+API info
+•	https://www.thecocktaildb.com/api.php
+•	Will do a fetch request to the api to pull down a list of cocktails by ingredient entered by the user
+•	Can hit the randomizer button to pull down a random cocktail, and put that into the main focus window
+o	    Along with the recipe and instructions
