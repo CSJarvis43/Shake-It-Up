@@ -1,6 +1,7 @@
 const baseUrl = 'https://www.thecocktaildb.com/api/json/v1/1'
 const drinkCollection = document.getElementById('drink_collection')
 const ingredientList = document.getElementById('ingredients')
+const randomCocktail = document.querySelector('.image__overlay')
 
 function fetchCocktails(ingredient = 'tequila'){
     fetch(baseUrl + `/filter.php?i=${ingredient}`)
@@ -19,6 +20,8 @@ function initialFocus(){
         renderMain(drink)
     })
 }
+
+
 
 function renderCocktails(drinks){
     const card = document.createElement('div')
@@ -112,6 +115,11 @@ function groceryLister(){
     })
 
 }
+
+randomCocktail.addEventListener('click', () => {
+    const focusDiv = document.getElementById('focus_div')
+    initialFocus()
+})
 
 fetchCocktails()
 initialFocus()
