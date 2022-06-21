@@ -27,7 +27,7 @@ function renderCocktails(drinks){
     const card = document.createElement('div')
     card.className = 'drink_card'
 
-    const name = document.createElement('h3')
+    const name = document.createElement('h5')
     name.textContent = drinks.strDrink
 
     const image = document.createElement('img')

@@ -1,3 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@300&display=swap');
+
+body {
+    background-image: url("https://i.imgur.com/svRxY5L.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
 div#header {
     margin: auto;
     width: 50%;
@@ -11,8 +19,8 @@ div#header {
 }
 
 #drink_focus {
-    width: 400px;
-    height:400px;
+    width: 600px;
+    height:600px;
     object-fit: cover;
 }
 
@@ -110,4 +118,87 @@ input[type=text] {
     margin-top: 0.25em;
 
 
+}
+
+body {
+    color: rgb(255, 255, 255);
+  text-shadow:
+    0 0 7px #fff,
+    /* 0 0 10px #fff, */
+    /* 0 0 21px #fff, */
+    0 0 42px #bc13fe,
+    0 0 82px #bc13fe;
+    /* 0 0 92px #bc13fe,
+    0 0 102px #bc13fe,
+    0 0 151px #bc13fe; */
+    font-size: 34px;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+  }
+
+  #liquors {
+    width: 400px;
+  }
+
+body {
+    display: grid;
+    grid-template-rows: 30vh 120vh;
+}
+
+div#header {
+    grid-row: 1;
+}
+
+div#focus_div {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 40vw 40vw 20vw;
+    grid-template-rows: 30vh 40vh 20vh 45vh 20vh;
+}
+
+div#drink_title {
+    grid-column: 1;
+    grid-row: 1;
+    margin-top: 0px;
+}
+
+img#drink_focus {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    display: flex;
+    align-self: center;
+    margin: auto;
+    margin-bottom: 0px;
+}
+
+div#ingred {
+    grid-column: 2;
+    grid-row: 1;
+    justify-content: center;
+}
+
+div#inst {
+    grid-column: 2;
+    grid-row: 2;
+    margin: auto;
+}
+
+div.image {
+    grid-column: 3;
+    grid-row: 1 / span 2;
+    margin: auto;
+}
+
+div#sort_form {
+    grid-column: 1 / span 3;
+    grid-row: 3;
+}
+
+div#drink_collection {
+    grid-column: 1 / span 3;
+    grid-row: 4;
+}
+
+div.list_container {
+    grid-column: 1 / span 3;
+    grid-row: 5;
 }
