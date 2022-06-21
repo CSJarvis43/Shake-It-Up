@@ -37,6 +37,7 @@ function renderCocktails(drinks){
     card.addEventListener('click',() => {
         const mainName = document.getElementById('focus_name')
         mainName.textContent = drinks.strDrink
+        mainName.className = 'neonText'
 
         const mainImage= document.getElementById('drink_focus')
         mainImage.src = drinks.strDrinkThumb
