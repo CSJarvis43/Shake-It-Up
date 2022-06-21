@@ -19,8 +19,8 @@ div#header {
 }
 
 #drink_focus {
-    width: 700px;
-    height:700px;
+    width: 600px;
+    height:600px;
     object-fit: cover;
 }
 
@@ -155,7 +155,7 @@ div#focus_div {
     grid-template-rows: 30vh 40vh 20vh 45vh 20vh;
 }
 
-h3#focus_name {
+div#drink_title {
     grid-column: 1;
     grid-row: 1;
     margin-top: 0px;
@@ -167,6 +167,7 @@ img#drink_focus {
     display: flex;
     align-self: center;
     margin: auto;
+    margin-bottom: 0px;
 }
 
 div#ingred {
