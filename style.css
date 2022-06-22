@@ -19,9 +19,11 @@ div#header {
 }
 
 #drink_focus {
-    width: 600px;
-    height:600px;
+    width: 70%;
+    height:70%;
     object-fit: cover;
+    border: 10px solid #bc13fe ;
+    border-radius: 50px;
 }
 
 #sort_form {
@@ -161,6 +163,13 @@ div#drink_title {
     margin-top: 0px;
 }
 
+div#drink_title h2 {
+    margin-bottom: 10px;
+}
+div#drink_title h3 {
+    margin-top: 5px;
+}
+
 img#drink_focus {
     grid-column: 1;
     grid-row: 1 / span 2;
@@ -168,18 +177,45 @@ img#drink_focus {
     align-self: center;
     margin: auto;
     margin-bottom: 0px;
+    margin-top: 10%;
 }
 
 div#ingred {
     grid-column: 2;
     grid-row: 1;
-    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+div#ingred h3 {
+    align-self: center;
+    margin-bottom: 0px;
+    text-align: center;
+}
+
+#ingredients{
+   list-style: none; 
+   align-self: center;
+   margin-top: 20px;
 }
 
 div#inst {
     grid-column: 2;
     grid-row: 2;
     margin: auto;
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+div#inst h4 {
+    margin-top: 0%;
+    margin-bottom: 0%;
+}
+
+#instructions {
+    margin-top: 2%;
 }
 
 div.image {
