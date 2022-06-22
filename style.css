@@ -7,8 +7,8 @@ body {
 }
 
 div#header {
-    margin: auto;
-    width: 50%;
+    height: 225px;
+    width: 100%;
     text-align: center;
 }
 
@@ -76,6 +76,11 @@ input[type=text] {
 .image__img {
     display: block;
     width: 100%;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+ 
 }
 
 .image__overlay {
@@ -93,6 +98,7 @@ input[type=text] {
     justify-content: center;
     opacity: 0;
     transition: opacity 0.25s;
+   
 }
 
 .image__overlay > * {
