@@ -6,10 +6,31 @@ body {
     background-size: cover;
 }
 
-div#header {
-    height: 225px;
+#header {
+    height: 100%;
     width: 100%;
+    object-fit: cover;
+    overflow: hidden;
+    position: relative;
+}
+
+#header video {
+    min-width: 100%;
+    min-height: 100%;
+    position: absolute;
+    object-fit: cover;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+/* Just styling the content of the div, the *magic* in the previous rules */
+#header .caption {
+    z-index: 1;
+    position: relative;
     text-align: center;
+    color: #dc0000;
+    padding: 10px;
 }
 
 #focus_div {
@@ -20,9 +41,9 @@ div#header {
 
 #drink_focus {
     width: 70%;
-    height:70%;
+    height: 70%;
     object-fit: cover;
-    border: 10px solid #bc13fe ;
+    border: 10px solid #bc13fe;
     border-radius: 50px;
 }
 
@@ -34,7 +55,7 @@ div#header {
     margin-bottom: 50px;
 }
 
-.drink_card_img{
+.drink_card_img {
     width: 150px;
     height: 150px;
     object-fit: cover;
@@ -82,7 +103,7 @@ input[type=text] {
     border-top-right-radius: 50%;
     border-bottom-left-radius: 50%;
     border-bottom-right-radius: 50%;
- 
+
 }
 
 .image__overlay {
@@ -91,7 +112,7 @@ input[type=text] {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0, 0.6);
+    background: rgba(0, 0, 0, 0.6);
     color: #ffffff;
     font-family: 'Quicksand', sans-serif;
     display: flex;
@@ -100,10 +121,10 @@ input[type=text] {
     justify-content: center;
     opacity: 0;
     transition: opacity 0.25s;
-   
+
 }
 
-.image__overlay > * {
+.image__overlay>* {
     transform: translateY(20px);
     transition: transform 0.25s;
 }
@@ -112,7 +133,7 @@ input[type=text] {
     opacity: 1;
 }
 
-.image__overlay:hover > * {
+.image__overlay:hover>* {
     transform: translateY(0);
 }
 
@@ -130,22 +151,22 @@ input[type=text] {
 
 body {
     color: rgb(255, 255, 255);
-  text-shadow:
-    0 0 7px #fff,
-    /* 0 0 10px #fff, */
-    /* 0 0 21px #fff, */
-    0 0 42px #bc13fe,
-    0 0 82px #bc13fe;
+    text-shadow:
+        0 0 7px #fff,
+        /* 0 0 10px #fff, */
+        /* 0 0 21px #fff, */
+        0 0 42px #bc13fe,
+        0 0 82px #bc13fe;
     /* 0 0 92px #bc13fe,
     0 0 102px #bc13fe,
     0 0 151px #bc13fe; */
     font-size: 34px;
     font-family: 'Yanone Kaffeesatz', sans-serif;
-  }
+}
 
-  #liquors {
+#liquors {
     width: 400px;
-  }
+}
 
 body {
     display: grid;
@@ -172,6 +193,7 @@ div#drink_title {
 div#drink_title h2 {
     margin-bottom: 10px;
 }
+
 div#drink_title h3 {
     margin-top: 5px;
 }
@@ -193,16 +215,17 @@ div#ingred {
     flex-direction: column;
     justify-content: flex-end;
 }
+
 div#ingred h3 {
     align-self: center;
     margin-bottom: 0px;
     text-align: center;
 }
 
-#ingredients{
-   list-style: none; 
-   align-self: center;
-   margin-top: 20px;
+#ingredients {
+    list-style: none;
+    align-self: center;
+    margin-top: 20px;
 }
 
 div#inst {
