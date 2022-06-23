@@ -124,6 +124,25 @@ function groceryFetcher(){
     .then(groceryData => groceryData.forEach(renderList))
 }
 
+function groceryPoster(){
+    const submit = document.querySelector('.grocery_list')
+    submit.addEventListener('submit', e => {
+        e.preventDefault()
+        const newItem = e.target['ingredient1'].value
+        const postObj = {name: newItem}
+        const configObj = {
+            method: "POST",
+            headers: {
+                "Content-type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify(postObj)
+        }
+        fetch("http://localhost:3000/ingredients", configObj)
+        .then(res => res.json())
+    })
+}
+
 function renderList(groceryData){
     const li = document.createElement('li')
         li.textContent = groceryData.name
@@ -142,4 +161,5 @@ initialFocus()
 selectedDrink()
 groceryLister()
 groceryFetcher()
+groceryPoster()
 
