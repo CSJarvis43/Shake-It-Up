@@ -1,0 +1,16 @@
+{
+    "ingredients": [
+        {
+            "id": 1,
+            "name": "Bourbon"
+        },
+        {
+            "id": 2,
+            "name": "Simple Syrup"
+        },
+        {
+            "id": 3,
+            "name": "Bitters"
+        }
+    ]
+}

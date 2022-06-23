@@ -112,12 +112,28 @@ function groceryLister(){
         const li = document.createElement('li')
         li.textContent = ingredient
         list.append(li)
+        
+        
     })
 
 }
 
+function groceryFetcher(){
+    fetch("http://localhost:3000/ingredients")
+    .then(res => res.json())
+    .then(groceryData => groceryData.forEach(renderList))
+}
+
+function renderList(groceryData){
+    const li = document.createElement('li')
+        li.textContent = groceryData.name
+        list.append(li)
+}
+
+
+
+
 randomCocktail.addEventListener('click', () => {
-    const focusDiv = document.getElementById('focus_div')
     initialFocus()
 })
 
@@ -125,4 +141,5 @@ fetchCocktails()
 initialFocus()
 selectedDrink()
 groceryLister()
+groceryFetcher()
 
