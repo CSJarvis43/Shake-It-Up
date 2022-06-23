@@ -4,6 +4,15 @@ body {
     background-image: url("https://i.imgur.com/svRxY5L.jpg");
     background-position: center;
     background-size: cover;
+    color: rgb(255, 255, 255);
+    text-shadow:
+        0 0 7px #fff,
+        0 0 42px #bc13fe,
+        0 0 82px #bc13fe;
+    font-size: 34px;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    display: grid;
+    grid-template-rows: 30vh 120vh;
 }
 
 #header {
@@ -59,31 +68,62 @@ body {
     width: 150px;
     height: 150px;
     object-fit: cover;
+    border-radius: 20px;
+    border:5px solid #bc13fe;
 }
 
-.grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+.drink_menu {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 5%;
+    flex-direction: row;
+    overflow-x: auto;
+    /* display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr; */
     width: 75%;
     margin: auto;
+    max-height: 100%;
+}
+
+#drink_collection h4{
+    grid-column: 1 / span 5;
+    grid-row: 1;
 }
 
 .list_container {
-    padding-top: 2.5cm;
+    padding-top: 8%;
     display: flex;
     align-items: center;
     justify-content: center;
+    grid-column: 1 / span 3;
+    grid-row: 5;
+}
+
+.grocery_list{
+    display: flex;
+    width: 80%;
 }
 
 .list_child {
-    flex: 1;
-    border: 1px double black;
+    border: 1px solid #e0b6f0;
     font-size: 28px;
+    padding-top: 0.5%;
+    padding-bottom: 1%;
+}
+
+#listItems{
+    width: 50%;
+   
 }
 
 #list {
     text-align: center;
-    font-size: 20px;
+    font-size: 26px;
+    margin-top: 0%;
+}
+
+li{
+    text-align: left;
 }
 
 input[type=text] {
@@ -145,32 +185,10 @@ input[type=text] {
 .image__description {
     font-size: .75em;
     margin-top: 0.25em;
-
-
-}
-
-body {
-    color: rgb(255, 255, 255);
-    text-shadow:
-        0 0 7px #fff,
-        /* 0 0 10px #fff, */
-        /* 0 0 21px #fff, */
-        0 0 42px #bc13fe,
-        0 0 82px #bc13fe;
-    /* 0 0 92px #bc13fe,
-    0 0 102px #bc13fe,
-    0 0 151px #bc13fe; */
-    font-size: 34px;
-    font-family: 'Yanone Kaffeesatz', sans-serif;
 }
 
 #liquors {
     width: 400px;
-}
-
-body {
-    display: grid;
-    grid-template-rows: 30vh 120vh;
 }
 
 div#header {
@@ -263,7 +281,3 @@ div#drink_collection {
     grid-row: 4;
 }
 
-div.list_container {
-    grid-column: 1 / span 3;
-    grid-row: 5;
-}
