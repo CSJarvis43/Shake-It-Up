@@ -161,6 +161,10 @@ input[type=text] {
     justify-content: center;
     opacity: 0;
     transition: opacity 0.25s;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
 
 }
 
@@ -178,7 +182,7 @@ input[type=text] {
 }
 
 .image__title {
-    font-size: 1em;
+    font-size: .8em;
     font-weight: bold;
 }
 
