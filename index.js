@@ -7,7 +7,7 @@ function fetchCocktails(ingredient = 'tequila'){
     fetch(baseUrl + `/filter.php?i=${ingredient}`)
     .then(res => res.json())
     .then((drinkData) => {
-        drinkData.drinks.slice(0,10).forEach(renderCocktails)
+        drinkData.drinks.forEach(renderCocktails)
     })
 }
 
