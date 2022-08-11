@@ -1,7 +1,45 @@
-div#header {
-    margin: auto;
-    width: 50%;
+@import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@300&display=swap');
+
+body {
+    background-image: url("https://i.imgur.com/svRxY5L.jpg");
+    background-position: center;
+    background-size: cover;
+    color: rgb(255, 255, 255);
+    text-shadow:
+        0 0 7px #fff,
+        0 0 42px #bc13fe,
+        0 0 82px #bc13fe;
+    font-size: 34px;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    display: grid;
+    grid-template-rows: 30vh 120vh;
+}
+
+#header {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    overflow: hidden;
+    position: relative;
+}
+
+#header video {
+    min-width: 100%;
+    min-height: 100%;
+    position: absolute;
+    object-fit: cover;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+/* Just styling the content of the div, the *magic* in the previous rules */
+#header .caption {
+    z-index: 1;
+    position: relative;
     text-align: center;
+    color: #dc0000;
+    padding: 10px;
 }
 
 #focus_div {
@@ -11,9 +49,11 @@ div#header {
 }
 
 #drink_focus {
-    width: 400px;
-    height:400px;
+    width: 70%;
+    height: 70%;
     object-fit: cover;
+    border: 10px solid #bc13fe;
+    border-radius: 50px;
 }
 
 #sort_form {
@@ -24,37 +64,224 @@ div#header {
     margin-bottom: 50px;
 }
 
-.drink_card_img{
+.drink_card_img {
     width: 150px;
     height: 150px;
     object-fit: cover;
+    border-radius: 20px;
+    border:5px solid #bc13fe;
 }
 
-.grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+.drink_menu {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 5%;
+    flex-direction: row;
+    overflow-x: auto;
+    /* display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr; */
     width: 75%;
     margin: auto;
+    max-height: 100%;
+}
+
+#drink_collection h4{
+    grid-column: 1 / span 5;
+    grid-row: 1;
 }
 
 .list_container {
-    padding-top: 2.5cm;
+    padding-top: 8%;
     display: flex;
     align-items: center;
     justify-content: center;
+    grid-column: 1 / span 3;
+    grid-row: 5;
+}
+
+.grocery_list{
+    display: flex;
+    width: 80%;
 }
 
 .list_child {
-    flex: 1;
-    border: 1px double black;
+    border: 1px solid #e0b6f0;
     font-size: 28px;
+    padding-top: 0.5%;
+    padding-bottom: 1%;
+}
+
+#listItems{
+    width: 50%;
+   
 }
 
 #list {
     text-align: center;
-    font-size: 20px;
+    font-size: 26px;
+    margin-top: 0%;
+}
+
+li{
+    text-align: left;
 }
 
 input[type=text] {
     font-size: 28px;
 }
+
+.image {
+    position: relative;
+    width: 250px;
+
+}
+
+.image__img {
+    display: block;
+    width: 100%;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+
+}
+
+.image__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    color: #ffffff;
+    font-family: 'Quicksand', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.25s;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+
+}
+
+.image__overlay>* {
+    transform: translateY(20px);
+    transition: transform 0.25s;
+}
+
+.image__overlay:hover {
+    opacity: 1;
+}
+
+.image__overlay:hover>* {
+    transform: translateY(0);
+}
+
+.image__title {
+    font-size: .8em;
+    font-weight: bold;
+}
+
+.image__description {
+    font-size: .75em;
+    margin-top: 0.25em;
+}
+
+#liquors {
+    width: 400px;
+}
+
+div#header {
+    grid-row: 1;
+}
+
+div#focus_div {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 40vw 40vw 20vw;
+    grid-template-rows: 30vh 40vh 20vh 45vh 20vh;
+}
+
+div#drink_title {
+    grid-column: 1;
+    grid-row: 1;
+    margin-top: 0px;
+}
+
+div#drink_title h2 {
+    margin-bottom: 10px;
+}
+
+div#drink_title h3 {
+    margin-top: 5px;
+}
+
+img#drink_focus {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    display: flex;
+    align-self: center;
+    margin: auto;
+    margin-bottom: 0px;
+    margin-top: 10%;
+}
+
+div#ingred {
+    grid-column: 2;
+    grid-row: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+div#ingred h3 {
+    align-self: center;
+    margin-bottom: 0px;
+    text-align: center;
+}
+
+#ingredients {
+    list-style: none;
+    align-self: center;
+    margin-top: 20px;
+}
+
+div#inst {
+    grid-column: 2;
+    grid-row: 2;
+    margin: auto;
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+div#inst h4 {
+    margin-top: 0%;
+    margin-bottom: 0%;
+}
+
+#instructions {
+    margin-top: 2%;
+}
+
+div.image {
+    grid-column: 3;
+    grid-row: 1 / span 2;
+    margin: auto;
+}
+
+div#sort_form {
+    grid-column: 1 / span 3;
+    grid-row: 3;
+}
+
+div#drink_collection {
+    grid-column: 1 / span 3;
+    grid-row: 4;
+}
+
